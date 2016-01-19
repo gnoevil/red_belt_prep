@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Welcome {{ session['user']['name'] }}</h1>
+	<p>{{session['user']['name']}}</p>
+
+	<div class='row'>
+		{% for book in recent %}
+			<h4><a href='/books/{{book["b_id"]}}'>{{book['title']}}</a></h4>
+			<h3>Rating: {{book['rating']}}</h3>
+			<p>{{book['review']}} by <a href='/users/{{book["u_id"]}}'>{{book['alias']}}</a> on {{book['created_at']}}</p>
+		{% endfor%}
+		<hr>
+		{% for book in remaining %}
+			<h4><a href='/books/{{book["b_id"]}}'>{{book['title']}}</a></h4>
+		{% endfor %}
+
+		{{remaining}}
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{{user[0]['name']}}
+	{{user[0]['alias']}}
+	{{user[0]['email']}}
+	{{user[0]['counted']}}
+	<h1>REVIEW</h1>
+	{% for review in user %}
+		{{review['title']}}
+	{% endfor %}
+
+</body>
+</html>
